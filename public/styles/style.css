@@ -1,0 +1,32 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: #9F9F9F;
+  background-image: url('/img/bg.png');
+}
+
+.spacer {
+  display: block;
+  position: relative;
+  height: 50px;
+}
+.tweet {
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+div.grid_6:nth-child(even) {
+  margin-left: 0;
+}
+
+div.grid_6:nth-child(odd) {
+  margin-right: 0;
+}
+
+a,
+a:visited,
+a:hover {
+  color: #DDD;
+  text-decoration: none;
+}
