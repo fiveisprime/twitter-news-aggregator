@@ -6,6 +6,10 @@ body {
   background-image: url('/img/bg.png');
 }
 
+h2 {
+  text-align: center;
+}
+
 .spacer {
   display: block;
   position: relative;

@@ -1,13 +1,10 @@
 var Hapi    = require('hapi')
   , request = require('request')
+  , util    = require('util')
   , oauth   = require('./config').oauth
   , server;
 
-//
-// Search URL for twitter. This will gather the 100 most popular tweets that
-//    include the #node hashtag.
-//
-var url = 'https://api.twitter.com/1.1/search/tweets.json?q=%23node&result_type=mixed&count=100&lang=en';
+var templateUrl = 'https://api.twitter.com/1.1/search/tweets.json?q=%s&result_type=mixed&count=100&lang=en';
 
 server = Hapi.createServer('0.0.0.0', +process.env.PORT || 3000, {
   views: {
@@ -19,6 +16,13 @@ server = Hapi.createServer('0.0.0.0', +process.env.PORT || 3000, {
 });
 
 var getTweets = function(req) {
+  var url = null;
+  if (req.query.q) {
+    url = util.format(templateUrl, encodeURIComponent(req.query.q));
+  } else {
+    url = util.format(templateUrl, '%23node');
+  }
+
   request.get({ url: url, oauth: oauth }, function(err, response) {
 
     //

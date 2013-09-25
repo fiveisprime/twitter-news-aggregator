@@ -22,6 +22,7 @@
 
 </head>
 <body>
+  <h2>Use <code>/?q=%23hashtag</code> to search for hashtags.</h2>
   <section class="container">
     <div class="spacer"></div>
     {{#each tweets}}
@@ -32,6 +33,10 @@
           <small>{{created_at}}</small>
         </div>
       </div>
+    {{else}}
+      <p>
+        No tweets found.
+      </p>
     {{/each}}
   </section>
   <script type="text/javascript">

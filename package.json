@@ -6,6 +6,10 @@
   "scripts": {
     "test": "make test"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fiveisprime/twitter-news-aggregator.git"
+  },
   "author": "Matt Hernandez <matt@modulus.io>",
   "license": "MIT",
   "dependencies": {
