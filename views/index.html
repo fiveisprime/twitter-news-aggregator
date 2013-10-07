@@ -28,7 +28,7 @@
     {{#each tweets}}
       <div class="grid_6">
         <div class="tweet">
-          <p>{{text}}</p>
+          <p class="text">{{text}}</p>
           <p>From: <a href="http://twitter.com/{{user.screen_name}}" target="_blank">@{{user.screen_name}}</a></p>
           <small>{{created_at}}</small>
         </div>
@@ -41,7 +41,7 @@
   </section>
   <script type="text/javascript">
   (function($) {
-    $(".tweet").each(function() {
+    $(".tweet > p.text").each(function() {
       var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
       return $(this).html($(this).html().replace(exp, "<a href='$1' target='_blank'>$1</a>"));
     });
